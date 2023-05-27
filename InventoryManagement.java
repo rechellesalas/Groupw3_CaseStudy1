@@ -1,9 +1,9 @@
 import java.util.Scanner;
 import java.util.Map;
 import java.util.HashMap;
-class Inventory
+class Inventory //ENCAPSULATION
 {
-    private Map <String, Integer> unit;
+    private Map <String, Integer> unit;//CONSTRUCTOR
 
     public Inventory()
 
@@ -11,7 +11,7 @@ class Inventory
         unit = new HashMap<>();
     }
 
-    public void addItem(String item, int quantity)
+    public void addItem(String item, int quantity)//PARAMETERS
     {
         int currQuantity = unit.getOrDefault(item, 0);
         unit.put(item, currQuantity + quantity);
@@ -68,7 +68,7 @@ public class InventoryManagement
             switch (choice)
             {
                 case "1":
-                    try
+                    try 
                     {
                         System.out.print("Enter the inventory item name: ");
                         String item = scanner.nextLine();
@@ -91,7 +91,7 @@ public class InventoryManagement
                         int quantityToRemove = Integer.parseInt(scanner.nextLine());
                         inventory.removeItem(itemToRemove, quantityToRemove);
                     }
-                    catch (NumberFormatException e)
+                    catch (NumberFormatException e) //EXCEPTION
                     {
                         System.out.println("Invalid Quantity format. Please Enter a valid integer.");
                     }
