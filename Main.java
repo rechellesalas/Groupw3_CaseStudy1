@@ -4,14 +4,14 @@ import java.util.Scanner;
 
 class Book
 {
-    private static int nextId = 1;
+    private static int nextId = 1; 
 
-    private int id;
+    private int id;  //instances of attributes 
     private String title;
     private String author;
     private boolean available;
 
-    public Book(String title, String author)
+    public Book(String title, String author)  //public constructor
     {
         this.id = nextId++;
         this.title = title;
@@ -149,7 +149,7 @@ class Library
     }
 }
 
-class LibraryManagement
+class LibraryManagement   //encapsulations
 {
     private static final String EXIT_COMMAND = "6";
     private Library library;
@@ -203,7 +203,7 @@ class LibraryManagement
                 } else if (!command.equalsIgnoreCase(EXIT_COMMAND)) {
                     System.out.println(" -- Invalid choice! Please try again.--\n");
                 }
-            } catch (NumberFormatException e) {
+            } catch (NumberFormatException e) {  //Exception
                 System.out.println(" Invalid input!");
                 System.out.println(" Please enter a valid number.\n");
             }
